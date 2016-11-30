@@ -32,11 +32,14 @@ namespace CustomerManagement
             Cef.Initialize(settings);
 
             var startPage = String.Format(@"{0}\web\index.html", Application.StartupPath);
-            _browser = new ChromiumWebBrowser("about:blank");
-            _browser.Dock = DockStyle.Fill;
-            _browser.BrowserSettings = new BrowserSettings()
+
+            _browser = new ChromiumWebBrowser("about:blank")
             {
-                OffScreenTransparentBackground = false
+                Dock = DockStyle.Fill,
+                BrowserSettings = new BrowserSettings()
+                {
+                    OffScreenTransparentBackground = false
+                }
             };
 
             cefHost.Controls.Add(_browser);
