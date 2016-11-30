@@ -22,6 +22,7 @@ namespace CustomerManagement
             InitializeComponent();
 
             _customerService = new CustomerService();
+            InitializeBrowser();
         }
 
         private void InitializeBrowser()
